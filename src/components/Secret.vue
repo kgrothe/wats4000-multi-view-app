@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="secret">
     
-      <h1>{{ message }}</h1>
-      
+      <h1>{{ message }}</h1>      
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="Survey">Survey</router-link></li>
+      </ul>      
   </div>
 </template>
 
@@ -26,7 +29,7 @@ export default {
 }
 h1, h2 {
   font-weight: normal;
-}
+  }
 
 ul {
   list-style-type: none;

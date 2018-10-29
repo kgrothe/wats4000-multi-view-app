@@ -2,29 +2,26 @@
   <div class="survey">
       <h1>New Member Survey</h1>
       <p>Please complete the new member survey.</p>
-      <form v-on:submit.prevent="validateForm"> <!-- TODO: Set up the proper v-on directive to handle the form submission. -->
-        <!-- TODO: Add an error message to be displayed when the user submits invalid form data. -->
+      <form v-on:submit.prevent="validateForm"> 
       <p v-show="showError" class="error">Invalid data entered. Please check form and resubmit.</p>
 
-        <p><label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1" v-model="q1"></label></p><!-- TODO: Add the proper v-model directive to this input element. -->
+        <p><label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1" v-model="q1"></label></p>
 
         <p>Q2: What languages interest you the most?<br>
-          <!-- TODO: Create a loop to duplicate the label element and structures it contains for each item in the languageOptions array. -->
+          
           <label v-for="language in languageOptions">
             <input type="checkbox" v-model="q2" v-bind:value="language.value">
             {{ language.text }}
-            <!-- TODO: Set the proper v-model directive and use v-bind:value to set the value for this checkbox. -->
-            <!-- TODO: Output the text to display this option to the user. -->
+            
           </label>
         </p>
 
         <p>Q3: What other topics interest you?<br>
-          <!-- TODO: Create a loop to duplicate the label element and structures it contains for each item in the topicOptions array. -->
+          
           <label v-for="topic in topicOptions">
             <input type="checkbox" v-model="q3" v-bind:value="topic.value">
             {{ topic.text }}
-            <!-- TODO: Set the proper v-model directive and use v-bind:value to set the value for this checkbox. -->
-            <!-- TODO: Output the text to display this option to the user. -->
+            
           </label>
         </p>
         <p>
@@ -105,12 +102,7 @@ export default {
   },
   methods: {
     validateForm: function () {
-      // TODO: Validate the data submitted by the user according to these rules:
-      // q1 must not be blank
-      // q2.length must be greater than 0
-      // q3.length must be greater than 0
-      // q4 must not be blank
-      // q5 must not be blank
+     
       if ((this.q1 != '') &&
           (this.q2.length > 0) &&
           (this.q3.length > 0) &&
@@ -122,9 +114,7 @@ export default {
         console.log('Form is not valid');
         this.showError = true;
       }
-      // TODO: If all of the data is valid, then use the $router to move the user to the Secret page.
-      // TODO: If the data is not valid, alter the value of showError to show the error message.
-
+     
     }
   }
 }
